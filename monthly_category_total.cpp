@@ -11,8 +11,10 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include <climits>
+#include <vector>
 #include <iomanip>
+#include <algorithm>
+#include <string>
 
 int month(std::string input){
     int monthSlash = input.find('/');
@@ -27,6 +29,7 @@ std::string categorySeperator(std::string input){
 int main(){
     std::string day, store, category, cost, junk, file, chosenCategory, line;
     std::string categoryArray[20];
+    std::vector<std::string> categories;
     double total, monthArray[12] = {0};
     int count, choice;
     bool active = false;
@@ -49,14 +52,16 @@ int main(){
             }
         }
         if (active) {
-            line = std::to_string(count);
-            categoryArray[count] = line + "." + category;
+            categories.push_back(category);
+            categoryArray[count] = category;
             count++;
         }
         active = true;
     }
-    std::cout << std::endl;    
+    std::cout << std::endl; 
+    std::sort(categories.begin(), categories.end());
     for (int i = 0; i < count; i++){
+        categoryArray[i] = categories[i];
         std::cout << categoryArray[i] << std::endl;
     }
     std::cout << "Choose a number in " << "[0, " << count << "]: ";
