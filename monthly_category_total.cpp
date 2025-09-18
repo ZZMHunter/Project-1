@@ -14,7 +14,6 @@
 #include <vector>
 #include <iomanip>
 #include <algorithm>
-#include <string>
 
 int month(std::string input){
     int monthSlash = input.find('/');
@@ -62,6 +61,7 @@ int main(){
     std::sort(categories.begin(), categories.end());
     for (int i = 0; i < count; i++){
         categoryArray[i] = categories[i];
+        categoryArray[i] = std::to_string(i)+"."+categoryArray[i];
         std::cout << categoryArray[i] << std::endl;
     }
     std::cout << "Choose a number in " << "[0, " << count << "]: ";
