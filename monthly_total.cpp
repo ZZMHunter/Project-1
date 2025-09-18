@@ -35,12 +35,13 @@ int main(){
         std::cerr << "Error cannot open file" << std::endl;
         exit(1);
     }
+    std::cout << std::endl;
     getline(data, junk);
     while(getline(data, date, ',')){
         getline(data, description, ',');
         getline(data, category, ',');
         getline(data, amount);
-        array[month(date)] += std::stod(amount);
+        array[month(date)-1] += std::stod(amount);
     }
     for (int i = 0; i < 12; i++){
         std::cout << monthArr[i] << ", $" << array[i] << std::endl;
