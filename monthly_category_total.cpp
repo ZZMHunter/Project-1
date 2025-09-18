@@ -52,9 +52,10 @@ int main(){
             line = std::to_string(count);
             categoryArray[count] = line + "." + category;
             count++;
-            }
-            active = true;
         }
+        active = true;
+    }
+    std::cout << std::endl;    
     for (int i = 0; i < count; i++){
         std::cout << categoryArray[i] << std::endl;
     }
@@ -68,9 +69,10 @@ int main(){
         getline(data,category,',');
         getline(data,cost);
         if(category == categorySeperator(categoryArray[choice])){
-            monthArray[month(day)] += std::stod(cost);
+            monthArray[month(day)-1] += std::stod(cost);
         }
     }
+    std::cout << std::endl;
     for (int i = 0; i < 12; i++){
         std::cout << "Month: " << i+1 << ", $" << monthArray[i] << std::endl;
     }
