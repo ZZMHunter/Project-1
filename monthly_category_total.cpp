@@ -78,9 +78,9 @@ int main(){
             monthArray[month(day)-1] += std::stod(cost);
         }
     }
-    std::cout << std::endl;
+    std::cout << "Month" << category[choice] << "TOTAL"  std::endl;
     for (int i = 0; i < 12; i++){
-        std::cout << monthArr[i] <<  monthArray[i] << std::endl;
+        std::cout << monthArr[i] << ", " <<  monthArray[i] << std::endl;
     }
     data.close();
     return 0;
