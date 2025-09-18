@@ -25,7 +25,7 @@ std::string convert(const std::string &input)
     std::ostringstream returnString;
     returnString << std::setfill('0') << std::setw(2) << month << "/"
                  << std::setfill('0') << std::setw(2) << day << "/"
-                 << std::setfill('2') <<std::setfill('0') << std::setw(4) << year;
+                 << "20" << std::setw(4) << year;
     return returnString.str();
 }
 
