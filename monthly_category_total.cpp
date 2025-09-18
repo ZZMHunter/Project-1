@@ -65,7 +65,7 @@ int main(){
         categoryArray[i] = std::to_string(i)+"."+categoryArray[i];
         std::cout << categoryArray[i] << std::endl;
     }
-    std::cout << "Choose a number in " << "[0, " << count << "]: ";
+    std::cout << "Choose a number in " << "[0, " << count-1 << "]: ";
     std::cin >> choice;
     data.close();
     data.open(file);
