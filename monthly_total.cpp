@@ -22,6 +22,7 @@ int month(std::string input){
 int main(){
     std::string date, description, category, amount, junk, file;
     double array[12];
+    std::string monthArr[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     int index;
     for (int i = 0; i < 12; i++){
         array[i] = 0;
@@ -39,11 +40,10 @@ int main(){
         getline(data, description, ',');
         getline(data, category, ',');
         getline(data, amount);
-        std::cout << category << std::endl;
         array[month(date)] += std::stod(amount);
     }
-    for (int i = 1; i < 12; i++){
-        std::cout << "Month: " << i << ", $" << array[i] << std::endl;
+    for (int i = 0; i < 12; i++){
+        std::cout << monthArr[i] << ", $" << array[i] << std::endl;
     }
     data.close();
     return 0;
