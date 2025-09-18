@@ -26,6 +26,7 @@ std::string categorySeperator(std::string input){
 }
 
 int main(){
+    std::string monthArr[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     std::string day, store, category, cost, junk, file, chosenCategory, line;
     std::string categoryArray[20];
     std::vector<std::string> categories;
@@ -79,7 +80,7 @@ int main(){
     }
     std::cout << std::endl;
     for (int i = 0; i < 12; i++){
-        std::cout << "Month: " << i+1 << ", $" << monthArray[i] << std::endl;
+        std::cout << monthArr[i] << ", " << monthArray[i] << std::endl;
     }
     data.close();
     return 0;
