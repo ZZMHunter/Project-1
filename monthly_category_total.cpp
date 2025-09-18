@@ -80,6 +80,9 @@ int main(){
     }
     std::cout << std::endl;
     for (int i = 0; i < 12; i++){
+        std::cout << monthArray[i] << std::endl;
+    }
+    for (int i = 0; i < 12; i++){
         std::cout << monthArr[i] << ", " << monthArray[i] << std::endl;
     }
     data.close();
