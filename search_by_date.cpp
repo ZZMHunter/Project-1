@@ -22,10 +22,14 @@ std::string convert(const std::string &input)
     int day = std::stoi(input.substr(monthSlash + 1, daySlash - (monthSlash + 1)));
     int year = std::stoi(input.substr(daySlash + 1));
 
+    if(year < 100){
+        year+=2000;
+    }
+
     std::ostringstream returnString;
     returnString << std::setfill('0') << std::setw(2) << month << "/"
                  << std::setfill('0') << std::setw(2) << day << "/"
-                 << "20" << std::setw(4) << year;
+                 << year;
     return returnString.str();
 }
 
